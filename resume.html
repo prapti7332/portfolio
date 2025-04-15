@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Resume | Prapti Gupta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="projectstyle.css">
+  <link rel="stylesheet" href="cursor.css">
+  <script src="cursor.js" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Agdasima&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="resumestyle.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="name"><a href="index.html" style="text-decoration: none; color: inherit;">Prapti Gupta, <span>Architect in making</span></a></div>
+    <ul class="nav-links">
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="resume-container">
+    <div class="resume-left">
+      <img src="Images/pfp.jpg" alt="Profile Picture" class="profile-pic">
+      <div class="bio-text">
+        MSc Architecture student at TU Delft with a passion for residential design, geospatial mapping, parametric architecture, and modelmaking.
+        Also a dance enthusiast and foodie.
+      </div>
+    </div>
+
+    <div class="resume-right">
+      <!-- About Header -->
+      <div class="resume-toggle-header" id="aboutHeader">
+        <h2>About Me</h2>
+        <button id="toggleToFactsheet" class="factsheet-btn">Show Factsheet</button>
+      </div>
+
+      <!-- About Section -->
+      <div id="aboutMe" class="about-me-section">
+        <p>Hey there, welcome to my mini-blog! 
+        I’ve always believed that how a space feels matters just as much as how it looks. As a child, I was constantly rearranging rooms at home, not just to make things look “nice,” but to create a certain mood, an atmosphere. That curiosity eventually found a digital playground in The Sims (a simulation game), where I could shape not only interiors but entire houses. It taught me early on how powerful architecture can be in crafting experiences.</p>
+
+        <p>Although I studied science and languages in school, I longed for something more creative, a space where logic and imagination could meet. TU Delft was the perfect place for that, and after completing my BSc in Architecture, I chose to stay for my MSc. The program’s global perspective, with its focus on sustainability, technique, and vernacular design, really aligns with how I want to grow as both a designer and a person.</p>
+
+        <img src="Images/graduation.jpg" alt="Image not available" class="gradpic">
+
+        <p>I’m especially passionate about residential and vernacular architecture. Homes are deeply personal spaces, and I believe good design should respond to people’s real lives, their routines, cultures, and dreams. I’m interested in how architecture can adapt to different climates and communities, and how we can use traditional knowledge to address modern challenges. With issues like the housing crisis in the Netherlands, I’m motivated to explore innovative, sustainable ways to design high-quality, high-density housing that still feels like home.</p>
+
+        <p>What really drives me is a mix of empathy, curiosity, and creativity. I love collaborating with others and translating abstract ideas into real, human spaces. I’m a good listener, which helps me design more thoughtfully, and I thrive in environments where people exchange perspectives and build together.</p>
+
+        <img src="Images/team.jpg" alt="Image not available" class="teampic">
+
+        <p>Outside of architecture, I love singing (especially karaoke), cooking, and spending time with my family and friends, the kind of connections that remind me why designing for people is so important.</p>
+      </div>
+
+      <!-- Factsheet Section -->
+      <div id="factsheetContent" style="display: none;">
+        <div class="resume-toggle-header">
+          <h2>Experience</h2>
+          <button id="toggleToAbout" class="factsheet-btn">Show About Me</button>
+        </div>
+
+        <section>
+          <ul>
+            <li><strong>Intern Architect</strong> — ABML, Belgium (Sep 2022 - Jan 2023)<br>
+              Assisted in residential design and renovations. Helped obtain building permits and supported ongoing projects.</li>
+            <li><strong>Customer Service</strong> — Online Heroes, Belgium (Aug 2020 - Aug 2021)<br>
+              Managed customer queries, solved technical issues, and supported back-office operations.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Skills</h2>
+          <ul>
+            <li>Rhinoceros, Grasshopper, SketchUp, Revit, AutoCAD</li>
+            <li>Rayon, Adobe InDesign, Photoshop, Illustrator</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <ul>
+            <li><strong>MSc Architecture</strong> — TU Delft</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Languages</h2>
+          <ul>
+            <li>Dutch, English, French, German, Hindi, Gujarati</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Extracurricular</h2>
+          <ul>
+            <li>Freelance interior designer and video editor (2021–Present)</li>
+            <li>Volunteer teacher, Sant’ Egidio (2018)</li>
+            <li>Organized dance workshops, Antwerp (2021)</li>
+            <li>Winner — sLIM Compact Cities pitch, TU Delft (2024)</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer class="resume-footer">
+    <a href="mailto:yourmail@example.com" target="_blank">Email</a>
+    <a href="https://www.linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+    <a href="https://www.instagram.com/yourusername" target="_blank">Instagram</a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Fade-in when the page loads
+      document.body.classList.add("fade-in");
+  
+      // Add fade-out on navigation
+      const links = document.querySelectorAll("a:not([target='_blank']):not([href^='#'])");
+  
+      links.forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const href = this.getAttribute("href");
+  
+          document.body.classList.remove("fade-in");
+          document.body.classList.add("fade-out");
+  
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500); // match transition duration
+        });
+      });
+    });
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleToFactsheet = document.getElementById("toggleToFactsheet");
+      const toggleToAbout = document.getElementById("toggleToAbout");
+  
+      const aboutMe = document.getElementById("aboutMe");
+      const aboutHeader = document.getElementById("aboutHeader");
+      const factsheet = document.getElementById("factsheetContent");
+  
+      function showWithFade(element) {
+        element.classList.remove("fade-in"); // restart animation if needed
+        void element.offsetWidth; // trick to re-trigger animation
+        element.classList.add("fade-in");
+      }
+  
+      toggleToFactsheet.addEventListener("click", () => {
+        aboutMe.style.display = "none";
+        aboutHeader.style.display = "none";
+        factsheet.style.display = "block";
+        showWithFade(factsheet);
+      });
+  
+      toggleToAbout.addEventListener("click", () => {
+        factsheet.style.display = "none";
+        aboutMe.style.display = "block";
+        aboutHeader.style.display = "flex";
+        showWithFade(aboutMe);
+      });
+    });
+  </script>
+  
+</body>
+</html>

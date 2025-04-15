@@ -1,0 +1,212 @@
+/* === Resume Layout === */
+.resume-container {
+  display: flex;
+  margin-top: 80px;
+}
+
+/* Page transition */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+/* === Left Column === */
+.resume-left {
+  width: 40%;
+  min-width: 250px;
+  max-width: 400px;
+  height: 100vh;
+  position: fixed;
+  top: 30px;
+  left: 0;
+  padding: 30px 20px;
+  overflow: auto;
+  text-align: center;
+}
+
+.profile-pic {
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.bio-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* === Right Column === */
+.resume-right {
+  margin-left: 50%;
+  padding: 30px 40px;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.resume-right section {
+  margin-bottom: 40px;
+}
+
+.resume-right h2 {
+  color: #10ea55;
+  font-size: 24px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.resume-right ul {
+  padding-left: 20px;
+}
+
+.resume-right li {
+  margin-bottom: 8px;
+}
+
+/* === Toggle Header === */
+.resume-toggle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.resume-toggle-header h2 {
+  color: #10ea55;
+  font-size: 26px;
+  margin: 0;
+}
+
+/* === Toggle Button === */
+.factsheet-btn {
+  padding: 8px 18px;
+  background-color: #10ea55;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.factsheet-btn:hover {
+  background-color: #0cb94c;
+}
+
+/* === About Me Section === */
+.about-me-section {
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 30px;
+}
+
+.about-me-section p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* === Images === */
+.gradpic,
+.teampic {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+/* === Footer === */
+.resume-footer {
+  margin-top: 60px;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+.resume-footer a {
+  margin: 0 15px;
+  color: #10ea55;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.resume-footer a:hover {
+  color: #0cb94c;
+}
+
+/* === Responsive Styles === */
+@media (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+  }
+
+  .resume-left {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 70%;
+    max-width: 250px;
+  }
+
+  .bio-text {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .resume-right {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .resume-right h2 {
+    font-size: 18px;
+  }
+
+  .resume-right ul {
+    padding-left: 15px;
+  }
+
+  .resume-right li {
+    font-size: 14px;
+  }
+
+  .factsheet-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .resume-toggle-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
